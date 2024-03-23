@@ -1,0 +1,24 @@
+<div class= "container">
+  <div class="row justify-content-center mt-5">
+    <div class= "h1">
+      <h1>レビュー登録</h1>
+    </div>
+  </div>
+  <div class="row justify-content-center mt-2">
+      <%= image_tag @review.image, size: "500x300"%>
+  </div>
+  <div class="row justify-content-center mt-2">
+      <%= @review.title%>
+  </div>
+  <div class="row justify-content-center mt-2">
+      <%= @review.content%>
+  </div>
+  <div class="row justify-content-center mt-2">
+       <%= @review.address%>
+  </div>
+  <div class="row justify-content-center mt-2">
+     <%= @review.price%>円
+  </div>
+
+</div>
+

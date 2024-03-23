@@ -1,0 +1,84 @@
+<div class= "container">
+  <div class="row justify-content-center mt-5">
+    <div class= "h1">
+      <h1>レビュー登録</h1>
+    </div>
+  </div>
+    <%= form_with model: @review,url: admin_reviews_path do |f| %>
+      <div class="p">
+        <div class="row justify-content-center mt-3">
+          <div class="col-1">
+            <%= f.label :"画像" %>
+          </div>
+          <div class="col-2">
+            <%= f.file_field :image, accept: "image/*" %>
+          </div>
+        </div>
+        <div class="row justify-content-center mt-3">
+          <div class="col-1">
+            <%= f.label :"タイトル  " %>
+          </div>
+          <div class="col-2">
+            <%= f.text_field :title %>
+          </div>
+        </div>
+        <div class="row justify-content-center mt-1">
+          <div class="col-1">
+            <%= f.label :"説明" %>
+          </div>
+          <div class="col-2">
+            <%= f.text_area  :content %>
+          </div>
+        </div>
+        <div class="row justify-content-center mt-1">
+          <div class="col-1">
+            <%= f.label :"住所" %>
+          </div>
+          <div class="col-2">
+            <%= f.text_field :address %>
+          </div>
+        </div>
+        <div class="row justify-content-center mt-1">
+          <div class="col-1">
+            <%= f.label :"料金" %>
+          </div>
+          <div class="col-2">
+            <%= f.text_field :price %>
+          </div>
+        </div>
+        <div class="row justify-content-center mt-1">
+          <div class="col-1">
+            <%= f.label :"タイプ" %>
+          </div>
+          <div class="col-2">
+          <%= f.select :review_type, Review.reviewtypes.keys.map { |k| [t("enum.review.review_type.#{k}"), k] } %>
+          </div>
+        </div>
+        <div class="row justify-content-center mt-1">
+          <div class="col-1">
+            <%= f.label :"エリア" %>
+          </div>
+          <div class="col-2">
+            
+              <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, { include_blank: "---" }, { class: "" } %>
+          </div>
+        </div>
+        <div class="row justify-content-center mt-1">
+          <div class="col-1">
+            <%= f.label :"評価" %>
+          </div>
+          <div class="col-2">
+            <%#= f.text_field :star %>
+          </div>
+        </div>
+        <div class="row justify-content-center mt-4">
+          <div class="col-1">
+            <%= f.submit 'レビュー登録',class: 'btn btn-primary btn-lg', style: 'background-color: #663300; color: #EEE8AA;' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+

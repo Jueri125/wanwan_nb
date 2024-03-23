@@ -1,0 +1,2 @@
+module Pbblic::CommentHelper
+end

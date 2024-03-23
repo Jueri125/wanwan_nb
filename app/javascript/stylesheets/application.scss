@@ -1,0 +1,31 @@
+@use '~bootstrap/scss/bootstrap';
+
+@font-face {
+  font-family: 'pugno';
+  src: url('../fonts/pugnomincho-mini.otf');
+}
+
+.nav-title-container {
+  display: flex;
+  justify-content: center; /* 要素を水平方向に中央揃え */
+  align-items: center; /* 要素を垂直方向に中央揃え */
+  height: 100px; /* 適切な高さを設定 */
+}
+
+.nav-title {
+  font-family: "pugno";
+  font-size: 70px;
+  color: #EEE8AA;
+}
+
+.nav-link {
+  color: #EEE8AA;
+}
+
+.h1 {
+  color: #663300;
+}
+.p {
+  color: #663300;
+   font-weight: bold;
+}
