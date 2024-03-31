@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 2024_03_23_072949) do
     t.text "title", null: false
     t.text "content", null: false
     t.string "address", null: false
-    t.integer "price", null: false
+    t.integer "price"
     t.integer "star"
     t.integer "review_type", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(version: 2024_03_23_072949) do
     t.datetime "remember_created_at"
     t.string "name", default: "", null: false
     t.string "name_kana", default: "", null: false
+    t.string "introduction", default: "", null: false
     t.boolean "is_active", default: true, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

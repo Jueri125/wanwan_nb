@@ -3,19 +3,49 @@
     <div class= "h1">
       <h1>レビュー一覧</h1>
     </div>
-    <div class="col-md-1 offset-4">
+    <div class="col-md-1">
       <%= link_to new_admin_review_path, class: "btn btn-lg" do %>
-       <i class="fa-solid fa-plus"></i>
+        <i class="fa-solid fa-plus"></i>
       <% end %>
     </div>
-    <div class="row justify-content-center mt-5">
-        <% @reviews.each do |review| %>
-          <li><%= review.title %></li>
-        <% end %>
-    </div>
-
-
   </div>
+</div>
+<div class="container">
+  <div class="row justify-content-end">
+  <div class="col-md-6">
+    <%= form_with(url: admin_reviews_path, method: :get, local: true) do |form| %>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <%= form.select :review_type, options_for_select([["ドックラン", "dog_run"], ["ドックカフェ", "dog_cafe"], ["ドックホテル", "dog_hotel"], ["ドックイベント", "dog_event"]]), { prompt: "選択してください" }, class: "form-control form-control-sm" %>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <%= form.submit "検索する", class: "btn btn-primary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="container">
+ <div class="row justify-content-center mt-1">
+     <table style="width: 50%;">
+       <thead class="thead" style="background-color: silver;">
+        <th style="width: 20%">商品ID</th>
+        <th style="width: 30%">商品名</th>
+        <th style="width: 20%">税抜価格</th>
+       </thead>
+       <tbody>
+       <%  @reviews.each do |review| %>
+        <tr>
+          <td style="width: 10%"><%= review.id %></td>
+          <td style="width: 30%" ><%= link_to review.title, admin_review_path(review.id) %></td>
+          <td style="width: 10%"><%= review.price %></td>
+        </tr>
+       <% end %>
+      </tbody>
+     </table>
+    </div>
 </div>
 
 

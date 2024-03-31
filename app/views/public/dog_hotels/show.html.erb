@@ -1,2 +1,32 @@
-<h1>Public::DogHotels#show</h1>
-<p>Find me in app/views/public/dog_hotels/show.html.erb</p>
+<div class= "container">
+  <div class="row justify-content-center mt-5">
+    <div class= "h1">
+      <h1>詳細</h1>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-4 offset-1" style="border-radius: 10px; overflow: hidden;">
+      <% if @dog_hotel.image.attached? %>
+        <%= image_tag @dog_hotel.image, size: "400x250", style: "border-radius: 10px;" %>
+      <% else %>
+        <%= image_tag 'no_image', size: "300x250", style: "border-radius: 10px;" %>
+      <% end %>
+    </div>
+    <div class="col-4 offset-1">
+      <div class="card" style="border-radius: 15px;">
+        <div class="card-body">
+          <h5 class="card-title text-center" style="border-bottom: 2px dotted #ff69b4;"><%= @dog_hotel.title %></h5>
+          <p class="card-text text-center" style="margin-bottom: 30px;"><%= @dog_hotel.content %></p>
+          <p class="card-text text-center" ><strong>住所：</strong><%= @dog_hotel.address %></p>
+          <p class="card-text text-center"><strong>料金：</strong><%= @dog_hotel.price %></p>
+        </div>
+      </div>
+    </div>
+    <div class= "container">
+      <div class="row justify-content-center mt-3">
+        <div class="text-center mt-3">
+           <a href="<%= public_dog_hotels_path %>" class="btn btn-success"  style="background-color: #663300; border-color: #663300;">一覧に戻る</a>
+        </div>
+      </div>
+    </div>
+</div>

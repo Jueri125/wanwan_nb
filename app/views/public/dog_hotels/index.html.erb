@@ -1,2 +1,31 @@
-<h1>Public::DogHotels#index</h1>
-<p>Find me in app/views/public/dog_hotels/index.html.erb</p>
+<div class= "container">
+   <div class="row justify-content-center mt-5">
+     <div class= "h1">
+       <h1>ドックホテル一覧</h1>
+     </div>
+   </div>
+   <div class="container offset-1">
+     <div class="row">
+        <% @reviews.where(review_type: :dog_hotel).each do |review| %>
+          <div class="col-md-3">
+            <div class="border p-3">
+              <%= link_to public_dog_hotel_path(review.id) do %>
+                <% if review.image.attached? %>
+                  <%= image_tag review.image, size: "200x150" %>
+                <% else %>
+                  <%= image_tag 'no_image', size: "200x150" %>
+                <% end %>
+              <% end %>
+                <br>
+              <strong>ドックホテル名</strong>
+                <%= review.title %><br>
+              <strong>住所</strong>
+                <%= review.address %><br>
+              <strong>料金</strong>
+                <%= review.price %>
+            </div>
+          </div>
+        <% end %>
+     </div>
+   </div>
+</div>

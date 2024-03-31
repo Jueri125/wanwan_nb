@@ -5,6 +5,12 @@
         <%= render "public/shared/error_messages", resource: resource %>
   </div>
 </div>
+
+
+         <div class="field text-center">
+          <%= f.label :"画像"%><br />
+　　　　　<%= f.file_field :image, accept: "image/*" %>
+        </div>
         <div class="field text-center">
           <%= f.label :"氏名"%><br />
           <%= f.text_field :name %>

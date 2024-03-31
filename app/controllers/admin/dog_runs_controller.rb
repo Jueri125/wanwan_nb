@@ -1,5 +1,6 @@
 class Admin::DogRunsController < ApplicationController
   def index
+    @reviews = Review.all
   end
 
   def new

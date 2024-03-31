@@ -28,145 +28,127 @@
            <ul class="nav justify-content-center">
              <% if admin_signed_in? %>
 
-                 <li class="nav-link">
-                  <%= link_to(admin_users_path, method: :get) do %>
-                  会員一覧
-                  <% end %>
-                 </li>
-
-                 <li class="nav-link">
-                   <%= link_to(destroy_admin_session_path, method: :delete ) do %>
-                   ログアウト
+              <ul class="nav">
+                 <li class="nav-item">
+                   <%= link_to(admin_users_path, method: :get, class: "nav-link text-left") do %>
+                     会員一覧
                    <% end %>
                  </li>
 
-                 <li class="nav-link">
-                   <%#= link_to(_path, method: :delete) do %>
-                   エリア
-                   <%# end %>
+                 <li class="nav-item">
+                   <%= link_to(destroy_admin_session_path, method: :delete, class: "nav-link text-left") do %>
+                     ログアウト
+                   <% end %>
                  </li>
 
+                <li class="nav-item">
+                 <%= link_to(destroy_admin_session_path, method: :delete, class: "nav-link text-center") do %>
+                     <i class="fa-solid fa-location-dot">エリア</i>
+                 <% end %>
+                </li>
 
-                 <li class="nav-link">
-                  <%= link_to(admin_reviews_path, method: :get) do %>
-                  レビュー一覧
-                  <% end %>
+                 <li class="nav-item">
+                   <%= link_to(admin_reviews_path, method: :get, class: "nav-link text-left") do %>
+                     <i class="fa-solid fa-dog"></i> レビュー一覧
+                   <% end %>
                  </li>
-                 <br>
-                 <li class="nav-link">
-                  <%= link_to(admin_dog_runs_path, method: :get) do %>
-                  ドックラン
-                  <% end %>
-                 </li>
-
-                 <li class="nav-link">
-                  <%= link_to(admin_dog_cafes_path, method: :get) do %>
-                  ドックカフェ
-                  <% end %>
-                 </li>
-
-                 <li class="nav-link">
-                  <%= link_to(admin_dog_hotels_path, method: :get) do %>
-                  ドックホテル
-                  <% end %>
-                 </li>
-
-                 <li class="nav-link">
-                  <%= link_to(admin_dog_events_path, method: :get) do %>
-                  ドックイベント
-                  <% end %>
-                 </li>
-
-
-
+               </ul>
 
              <% elsif user_signed_in? %>
                  <li class="nav-link">
-                   <%= link_to(customers_my_page_path, method: :get) do %>
+                   <%= link_to(user_my_page_path, method: :get, class: "nav-link text-left") do %>
                    マイページ
                    <% end %>
                  </li>
 
                  <li class="nav-link">
-                   <%= link_to(destroy_admin_session_path, method: :delete) do %>
-                   エリア
-                   <% end %>
-                 </li>
-
-                 <li class="nav-link">
-                   <%= link_to(destroy_user_session_path, method: :delete) do %>
+                   <%= link_to(destroy_user_session_path, method: :delete, class: "nav-link text-left") do %>
                     ログアウト
                    <% end %>
                  </li>
 
-                 <li class="nav-link">
-                  <%= link_to(public_dog_runs_path, method: :get) do %>
-                  ドックラン
-                  <% end %>
-                 </li>
+                <div class="container">
+                   <div class="row">
+                     <div class="col">
+                       <%#= link_to(destroy_admin_session_path, method: :delete, class: "nav-link text-center") do %>
+                         <i class="fa-solid fa-location-dot">エリア</i>
+                       <%# end %>
+                     </div>
 
-                 <li class="nav-link">
-                  <%= link_to(public_dog_cafes_path, method: :get) do %>
-                  ドックカフェ
-                  <% end %>
-                 </li>
+                     <div class="col">
+                       <%= link_to(public_dog_runs_path, method: :get, class: "nav-link text-center") do %>
+                         <i class="fa-solid fa-paw">ドックラン</i>
+                       <% end %>
+                     </div>
 
-                 <li class="nav-link">
-                  <%= link_to(public_dog_hotels_path, method: :get) do %>
-                  ドックホテル
-                  <% end %>
-                 </li>
+                     <div class="col">
+                       <%= link_to(public_dog_cafes_path, method: :get, class: "nav-link text-center") do %>
+                         <i class="fa-solid fa-mug-saucer">ドックカフェ</i>
+                       <% end %>
+                     </div>
 
-                 <li class="nav-link">
-                  <%= link_to(public_dog_events_path, method: :get) do %>
-                  ドックイベント
-                  <% end %>
-                 </li>
+                     <div class="col">
+                       <%= link_to(public_dog_hotels_path, method: :get, class: "nav-link text-center") do %>
+                         <i class="fa-solid fa-hotel">ドックホテル</i>
+                       <% end %>
+                     </div>
+
+                     <div class="col">
+                       <%= link_to(public_dog_events_path, method: :get, class: "nav-link text-center") do %>
+                         <i class="fa-solid fa-shield-dog">ドックイベント</i>
+                       <% end %>
+                     </div>
+                   </div>
+                 </div>
 
 
 
              <% else %>
                  <li class="nav-link">
-                  <%= link_to(public_dog_runs_path, method: :get) do %>
-                  ドックラン
-                  <% end %>
-                 </li>
-
-                 <li class="nav-link">
-                  <%= link_to(public_dog_cafes_path, method: :get) do %>
-                  ドックカフェ
-                  <% end %>
-                 </li>
-
-                 <li class="nav-link">
-                  <%= link_to(public_dog_hotels_path, method: :get) do %>
-                  ドックホテル
-                  <% end %>
-                 </li>
-
-                 <li class="nav-link">
-                  <%= link_to(public_dog_events_path, method: :get) do %>
-                  ドックイベント
-                  <% end %>
-                 </li>
-
-                 <li class="nav-link">
-                   <%#= link_to(_path, method: :delete) do %>
-                   エリア
-                   <%# end %>
-                 </li>
-
-                 <li class="nav-link">
-                   <%= link_to(new_user_registration_path, method: :get) do %>
+                   <%= link_to(new_user_registration_path, method: :get, class: "nav-link text-left") do %>
                    新規登録
                    <% end %>
                  </li>
 
                  <li class="nav-link">
-                   <%= link_to(new_user_session_path, method: :get) do %>
+                   <%= link_to(new_user_session_path, method: :get, class: "nav-link text-left") do %>
                     ログイン
                    <% end %>
                  </li>
+
+                 <div class="container">
+                   <div class="row">
+                     <div class="col">
+                       <%= link_to(destroy_admin_session_path, method: :delete, class: "nav-link text-center") do %>
+                         <i class="fa-solid fa-location-dot">エリア</i>
+                       <% end %>
+                     </div>
+
+                     <div class="col">
+                      <%= link_to(public_dog_runs_path, method: :get,class: "nav-link") do %>
+                      <i class="fa-solid fa-paw">ドックラン</i>
+                      <% end %>
+                     </div>
+
+                     <div class="col">
+                        <%= link_to(public_dog_cafes_path, method: :get, class: "nav-link") do %>
+                         <i class="fa-solid fa-mug-saucer">ドックカフェ</i>
+                       <% end %>
+                     </div>
+
+                     <div class="col">
+                       <%= link_to(public_dog_hotels_path, method: :ge,class: "nav-link") do %>
+                         <i class="fa-solid fa-hotel">ドックホテル</i>
+                       <% end %>
+                     </div>
+
+                     <div class="col">
+                       <%= link_to(public_dog_events_path, method: :get,class: "nav-link") do %>
+                         <i class="fa-solid fa-shield-dog">ドックイベント</i>
+                       <% end %>
+                     </div>
+                   </div>
+                 </div>
              <% end %>
             </ul>
            </div>

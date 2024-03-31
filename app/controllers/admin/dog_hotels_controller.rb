@@ -1,5 +1,7 @@
 class Admin::DogHotelsController < ApplicationController
   def index
+     @reviews = Review.all
+  end
   end
 
   def new

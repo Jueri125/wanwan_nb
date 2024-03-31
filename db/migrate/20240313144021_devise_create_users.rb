@@ -16,6 +16,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
 
       t.string :name,         null: false, default: ""
       t.string :name_kana,         null: false, default: ""
+      t.string :introduction, null: false, default: ""
+
+
 
       t.boolean :is_active, null: false,default: true
       ## Trackable
