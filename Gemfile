@@ -59,3 +59,5 @@ gem 'devise'
 gem "enum_help"
 gem 'seed-fu'
 gem 'kaminari'
+gem 'active_hash'
+gem 'haml-rails'

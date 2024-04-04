@@ -17,4 +17,9 @@ before_action :configure_permitted_parameters, if: :devise_controller?
       new_user_registration
     end
    end
+
+   def show
+      @prefecture = Prefecture.find(params[:id])
+      @regions = Region.all
+   end
 end

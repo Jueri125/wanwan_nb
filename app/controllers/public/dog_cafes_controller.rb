@@ -6,5 +6,8 @@ class Public::DogCafesController < ApplicationController
 
   def show
      @dog_cafe = Review.find(params[:id])
+     @comments = @dog_cafe.comments.order(created_at: :desc)
+     @comment = Comment.new
+     @users = User.all
   end
 end

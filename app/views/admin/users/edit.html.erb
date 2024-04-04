@@ -1,0 +1,56 @@
+<div class= "container">
+  <div class="row justify-content-center mt-5">
+    <div class= "h1">
+      <h1>編集</h1>
+    </div>
+  </div>
+　 <%= form_with(model: @user, url: admin_user_path(@user), method: :patch) do |f| %>
+      <div class="p">
+        <div class="row justify-content-center mt-3">
+          <div class="col-1">
+            <%= f.label :"画像" %>
+          </div>
+          <div class="col-2">
+            <%= f.file_field :image, accept: "image/*" %>
+          </div>
+        </div>
+        <div class="row justify-content-center mt-3">
+          <div class="col-1">
+            <%= f.label :"氏名" %>
+          </div>
+          <div class="col-2">
+            <%= f.text_field :name %>
+          </div>
+        </div>
+        <div class="row justify-content-center mt-1">
+          <div class="col-1">
+            <%= f.label :"フリガナ" %>
+          </div>
+          <div class="col-2">
+            <%= @user.name_kana %>
+          </div>
+        </div>
+        <div class="row justify-content-center mt-1">
+          <div class="col-1">
+            <%= f.label :"メールアドレス" %>
+          </div>
+          <div class="col-2">
+            <%= @user.email %>
+          </div>
+        </div>
+        <div class="row justify-content-center mt-1">
+          <div class="col-1">
+            <%= f.label :"挨拶" %>
+          </div>
+          <div class="col-2">
+            <%= @user.introduction %>
+          </div>
+        </div>
+        <div class="row justify-content-center mt-4">
+          <div class="col-1">
+            <%= f.submit '編集を保存',class: 'btn btn-primary btn-lg', style: 'background-color: #663300; color: #EEE8AA; border-color: #663300' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>

@@ -1,0 +1,55 @@
+<div class= "container">
+  <div class="row justify-content-center mt-5">
+    <div class= "h1">
+      <h1>詳細</h1>
+    </div>
+  </div>
+</div>
+
+<div class= "container">
+  <div class="row mt-5">
+    <div class="col-md-3 offset-md-3">
+      <% if @user.image.attached? %>
+        <%= image_tag @user.image, size: "200x200", class: "img-fluid rounded-circle" %>
+      <% else %>
+        <%= image_tag 'no_image', size: "200x200", class: "img-fluid rounded-circle" %>
+      <% end %>
+    </div>
+    <div class="col-md-3">
+      <div class="row justify-content-center mb-3">
+        <div class="col">
+          <h3><%= @user.name %></h3>
+        </div>
+      </div>
+      <div class="row justify-content-center mb-3">
+        <div class="col">
+          <p><%= @user.name_kana %></p>
+        </div>
+      </div>
+      <div class="row justify-content-center mb-3">
+        <div class="col">
+          <p><%= @user.email %></p>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col">
+          <p><%= @user.introduction %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row justify-content-center mt-3">
+    <div class="col-2">
+      <%= link_to "編集する", edit_admin_user_path(@user), class: "btn btn-secondary btn-block", style: "background-color: green; color: white;" %>
+    </div>
+    <div class="col-2">
+      <%= link_to "コメント一覧", admin_user_comments_path(@user), class: "btn btn-secondary btn-block", style: "background-color: #FF9900; color: white; border-color: #FF9900;" %>
+    </div>
+    <div class="col-2">
+      <%= link_to "戻る", admin_users_path, class: "btn btn-secondary btn-block" %>
+    </div>
+  </div>
+</div>

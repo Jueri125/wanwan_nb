@@ -1,17 +1,17 @@
 a:
   enums:
     review:
-      type:
+      review_type:
         dog_run: "ドックラン"
         dog_cafe: "ドックカフェ"
         dog_hotel: "ドックホテル"
         dog_event: "ドックイベント"
-  　 errors:
-    　 messages:
-         not_saved: "エラーが発生したため、保存されませんでした。"
-         restrict_dependent_destroy:
-          has_one: "%{record}が存在しているので削除できません"
-          has_many: "%{record}が存在しているので削除できません"
+  errors:
+    messages:
+      not_saved: "エラーが発生したため、保存されませんでした。"
+      restrict_dependent_destroy:
+        has_one: "%{record}が存在しているので削除できません"
+        has_many: "%{record}が存在しているので削除できません"
   date:
     abbr_day_names:
     - 日

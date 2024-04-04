@@ -36,9 +36,15 @@ class Admin::ReviewsController < ApplicationController
   end
 
   def update
-    @review = Review.find(params[:id])
-    @review.update(review_params)
-    redirect_to admin_reviews_path
+    review = Review.find(params[:id])
+    if review.update(review_params)
+      redirect_to admin_reviews_path
+    else
+      review.errors.full_messages.each do | msg |
+        pp msg
+      end
+      redirect_to admin_reviews_path
+    end
   end
 
   def destroy

@@ -4,7 +4,8 @@
       <h1>レビュー編集</h1>
     </div>
   </div>
-    <%= form_with(model: @review, url: admin_review_path(@review), method: :patch) do |f| %>
+    <%= form_with(model: @review, url: admin_review_path(@review.id), method: :patch) do |f| %>
+
       <div class="p">
         <div class="row justify-content-center mt-3">
           <div class="col-1">
@@ -73,7 +74,7 @@
         </div>
         <div class="row justify-content-center mt-4">
           <div class="col-1">
-            <%= f.submit '編集を保存',class: 'btn btn-primary btn-lg', style: 'background-color: #663300; color: #EEE8AA;' %>
+            <%= f.submit '編集を保存',class: 'btn btn-primary btn-lg', style: 'background-color: #663300; color: #EEE8AA;  border-color: #EEE8AA;' %>
           </div>
         </div>
       </div>

@@ -1,0 +1,36 @@
+<div class= "container">
+  <div class="row justify-content-center mt-5">
+    <div class= "h1">
+      <h1>会員一覧</h1>
+    </div>
+  </div>
+</div>
+
+<div class="container offset-4">
+    <div class="row">
+     <table style="width: 50%;">
+       <thead class="thead" style="background-color: #EEE8AA;">
+        <th style="width: 10%">会員ID</th>
+        <th style="width: 10%">氏名</th>
+        <th style="width: 20%">メールアドレス</th>
+        <th style="width: 10%">ステータス</th>
+       </thead>
+       <tbody>
+      <% @users.each do |user| %>
+        <tr>
+         <td style="width: 10%"><%= user.id %></td>
+         <td style="width: 10%"><%= link_to user.name, admin_user_path(user.id) %></td>
+         <td style="width: 20%"><%= user.email %></td>
+         <td style="width: 10%"><%= user.is_active %></td>
+        </tr>
+       <% end %>
+      </tbody>
+     </table>
+    </div>
+</div>
+<div class="container mt-5 offset-4">
+  <div class="row">
+   <%#= paginate @customers %>
+  </div>
+</div>
+

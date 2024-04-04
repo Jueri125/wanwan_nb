@@ -6,5 +6,8 @@ class Public::DogEventsController < ApplicationController
 
   def show
      @dog_event = Review.find(params[:id])
+     @comments = @dog_event.comments.order(created_at: :desc)
+     @comment = Comment.new
+     @users = User.all
   end
 end

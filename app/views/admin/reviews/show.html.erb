@@ -1,7 +1,7 @@
 <div class= "container">
   <div class="row justify-content-center mt-5">
     <div class= "h1">
-      <h1>レビュー登録</h1>
+      <h1>レビュー詳細</h1>
     </div>
   </div>
   <div class="row justify-content-center mt-2">
@@ -17,7 +17,9 @@
        <%= @review.address%>
   </div>
   <div class="row justify-content-center mt-2">
-     <%= @review.price%>円
+    <% if @review.price.present? %>
+      <%= @review.price %>円
+    <% end %>
   </div>
   <div class="row justify-content-center mt-3">
     <%= link_to "編集", edit_admin_review_path(@review), class: "btn btn-primary mr-3" %>
