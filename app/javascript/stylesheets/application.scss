@@ -1,4 +1,11 @@
 @use '~bootstrap/scss/bootstrap';
+@use 'home_users';
+@use 'homes';
+@use 'dog_runs';
+@use 'dog_cafes';
+@use 'dog_hotels';
+@use 'dog_events';
+
 * {
   margin: 0;
   padding: 0;
@@ -12,9 +19,9 @@
 
 .nav-title-container {
   display: flex;
-  justify-content: center; /* 要素を水平方向に中央揃え */
-  align-items: center; /* 要素を垂直方向に中央揃え */
-  height: 100px; /* 適切な高さを設定 */
+  justify-content: center;
+  align-items: center;
+  height: 100px;
 }
 
 .nav-title {
@@ -30,8 +37,27 @@
 .h1 {
   color: #663300;
 }
+
+
 .p {
   color: #663300;
    font-weight: bold;
 }
 
+.flash-message {
+  border-radius: 5px;
+  padding: 16px 24px;
+  margin: 16px 0px;
+}
+
+.flash-message.notice {
+  background-color: #bcdfff;
+  color: #0067C0;
+  border: solid 1px #0067C0;
+}
+
+.flash-message.alert {
+  background-color: #ffd4d1;
+  color: #930403;
+  border: solid 1px #930403;
+}

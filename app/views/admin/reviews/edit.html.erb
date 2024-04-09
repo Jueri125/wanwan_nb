@@ -11,8 +11,18 @@
           <div class="col-1">
             <%= f.label :"画像" %>
           </div>
+           <div class="col-2">
+              <%= f.file_field :image, accept: "image/*" %>
+          </div>
+        </div>
+        <div class="row justify-content-center mt-3">
+          <div class="col-1">
+            <%= f.label :"現在画像" %>
+          </div>
           <div class="col-2">
-            <%= f.file_field :image, accept: "image/*" %>
+            <% if @review.image.attached? %>
+              <%= image_tag @review.image, size: "200x100"%>
+            <% end %>
           </div>
         </div>
         <div class="row justify-content-center mt-3">
@@ -62,14 +72,6 @@
           <div class="col-2">
 
               <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, { include_blank: "---" }, { class: "" } %>
-          </div>
-        </div>
-        <div class="row justify-content-center mt-1">
-          <div class="col-1">
-            <%= f.label :"評価" %>
-          </div>
-          <div class="col-2">
-            <%#= f.text_field :star %>
           </div>
         </div>
         <div class="row justify-content-center mt-4">

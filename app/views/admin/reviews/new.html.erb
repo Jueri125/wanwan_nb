@@ -4,7 +4,7 @@
       <h1>レビュー登録</h1>
     </div>
   </div>
-    <%= form_with model: @review,url: admin_reviews_path do |f| %>
+    <%= form_with model: @review, url: admin_reviews_path do |f| %>
       <div class="p">
         <div class="row justify-content-center mt-3">
           <div class="col-1">
@@ -62,14 +62,7 @@
               <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, { include_blank: "---" }, { class: "" } %>
           </div>
         </div>
-        <div class="row justify-content-center mt-1">
-          <div class="col-1">
-            <%= f.label :"評価" %>
-          </div>
-          <div class="col-2">
-            <%#= f.text_field :star %>
-          </div>
-        </div>
+
         <div class="row justify-content-center mt-4">
           <div class="col-1">
             <%= f.submit 'レビュー登録',class: 'btn btn-primary btn-lg', style: 'background-color: #663300; color: #EEE8AA; border-color: #EEE8AA;' %>

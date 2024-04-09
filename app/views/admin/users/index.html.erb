@@ -21,7 +21,13 @@
          <td style="width: 10%"><%= user.id %></td>
          <td style="width: 10%"><%= link_to user.name, admin_user_path(user.id) %></td>
          <td style="width: 20%"><%= user.email %></td>
-         <td style="width: 10%"><%= user.is_active %></td>
+         <td style="width: 10%">
+           <% if user.is_active %>
+               <p class="text-success"><strong>登録中</strong></p>
+             <% elsif %>
+               <p class="text-muted"><strong>退会</strong></p>
+           <% end %>
+         </td>
         </tr>
        <% end %>
       </tbody>

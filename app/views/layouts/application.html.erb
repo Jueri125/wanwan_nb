@@ -137,7 +137,7 @@
                      </div>
 
                      <div class="col">
-                       <%= link_to(public_dog_hotels_path, method: :ge,class: "nav-link") do %>
+                       <%= link_to(public_dog_hotels_path, method: :get, class: "nav-link") do %>
                          <i class="fa-solid fa-hotel">ドックホテル</i>
                        <% end %>
                      </div>
@@ -157,6 +157,13 @@
        </div>
 
   </header>
+
+
+  <main>
+    <% flash.each do |message_type, message| %>
+      <div class="flash-message <%= message_type %>"><%= message %></div>
+    <% end %>
+  </main>
 
   <body style="background-color: #FFFFF0	;">
     <%= yield %>

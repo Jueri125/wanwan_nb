@@ -23,8 +23,13 @@ class Admin::ReviewsController < ApplicationController
 
   def create
     review = Review.new(review_params)
-    review.save
-    redirect_to  admin_reviews_path(review)
+    if review.save
+      flash[:notice] = "成功しました。"
+      redirect_to admin_reviews_path(review)
+    else
+      flash.now[:alert] = "失敗しました。"
+      render :new
+    end
   end
 
   def show
@@ -36,22 +41,25 @@ class Admin::ReviewsController < ApplicationController
   end
 
   def update
-    review = Review.find(params[:id])
-    if review.update(review_params)
+    @review = Review.find(params[:id])
+    current_image = @review.image
+    if @review.update(review_params)
+      flash[:notice] = 'レビューが更新されました。'
       redirect_to admin_reviews_path
     else
-      review.errors.full_messages.each do | msg |
+      @review.image = current_image if @review.image.blank?
+      @review.errors.full_messages.each do |msg|
         pp msg
       end
-      redirect_to admin_reviews_path
+      flash[:error] = 'レビューの更新に失敗しました。'
+      render :edit
     end
   end
 
   def destroy
-    review = Review.find(params[:id])
-    review.destroy
-    redirect_to admin_reviews_path
+    @review = Review.find(params[:id])
   end
+
 
   private
     def review_params

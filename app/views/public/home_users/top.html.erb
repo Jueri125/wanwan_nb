@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="app/javascript/home_users.css" />
+</head>
+
+<body>
+<div class="bg-image">
+  <div class="container">
+      <div class="top-title">
+        <h1>わんわんナビにようこそ！</h1>
+        <p>犬と楽しめる情報が満載！<br>犬と一緒に楽しむ場所を探そう</p>
+    </div>
+
+    <div class="top-body-a">
+      <div class="col text-center">
+        <%= link_to public_dog_runs_path do %>
+          <h4 class="type-title"><strong>ドックラン</strong></h4>
+          <h1 class="rogo"><i class="fa-solid fa-paw"></i></h1>
+        <% end %>
+      </div>
+    </div>
+    <div class="top-body-b">
+      <div class="col text-center">
+        <%= link_to public_dog_cafes_path do %>
+            <h4 class="type-title"><strong>ドックカフェ</strong></h4>
+            <h1 class="rogo"><i class="fa-solid fa-mug-saucer"></i></h1>
+        <% end %>
+      </div>
+    </div>
+    <div class="top-body-c">
+      <div class="col text-center">
+        <%= link_to public_dog_hotels_path do %>
+            <h4 class="type-title"><strong>ドックホテル</strong></h4>
+            <h1 class="rogo"><i class="fa-solid fa-hotel"></i></h1>
+        <% end %>
+      </div>
+    </div>
+    <div class="top-body-d">
+      <div class="col text-center">
+        <%= link_to public_dog_events_path do %>
+            <h4 class="type-title"><strong>ドック</br>
+            イベント</strong></h4>
+            <h1 class="rogo"><i class="fa-solid fa-shield-dog"></i></h1>
+        <% end %>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+</body>

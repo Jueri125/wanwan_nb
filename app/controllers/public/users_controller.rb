@@ -12,6 +12,7 @@ class Public::UsersController < ApplicationController
    @user.update(user_params)
    redirect_to user_my_page_path
   end
+  
 
   def withdrawal
    @user = current_user

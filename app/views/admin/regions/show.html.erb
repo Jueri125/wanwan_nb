@@ -17,7 +17,7 @@
        <tbody>
          <% @reviews.each do |review| %>
             <tr>
-              <td style="width: 10%"><%= review.review_type %></td>
+              <td style="width: 10%"><%= review.review_type_i18n %></td>
               <td style="width: 30%" ><%= link_to review.title, admin_review_path(review.id) %></td>
               <td style="width: 10%"><%= review.price %></td>
             </tr>
