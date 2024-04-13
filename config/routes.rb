@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+scope module: 'public' do
+  root 'homes#top'
+end
 
   devise_for :admin, skip: [:registrations, :passwords], controllers: {
   sessions: "admin/sessions"
@@ -28,8 +31,7 @@ namespace :admin do
   end
 
   namespace :public do
-    get '/' => 'homes#top'
-    get '/top'=> 'home_users#top'
+    get 'home_users/top'=> 'home_users#top'
     resources :dog_runs, only: [:index, :show]
     resources :dog_cafes, only: [:index, :show]
     resources :dog_hotels, only: [:index, :show]
