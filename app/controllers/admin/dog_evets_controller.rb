@@ -2,7 +2,6 @@ class Admin::DogEvetsController < ApplicationController
   def index
      @reviews = Review.all
   end
-  end
 
   def new
   end
