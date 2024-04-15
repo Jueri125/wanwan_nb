@@ -12,13 +12,13 @@ class Public::UsersController < ApplicationController
    @user.update(user_params)
    redirect_to user_my_page_path
   end
-  
+
 
   def withdrawal
    @user = current_user
    @user.update(is_active: false)
    reset_session
-   redirect_to public_path
+   redirect_to root_path
   end
 
 
